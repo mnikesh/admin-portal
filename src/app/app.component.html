@@ -1,0 +1,18 @@
+<app-header (signOut)="logout()" *ngIf="isAuthenticated"></app-header>
+<app-sidebar *ngIf="isAuthenticated"></app-sidebar>
+<router-outlet *ngIf="!isAuthenticated"></router-outlet>
+<div class="site-content" *ngIf="isAuthenticated">
+  <!-- Content -->
+  <div class="content-area">
+    <div class="container-fluid">
+      <div class="box box-block bg-white">
+        <div class="row">
+          <div class="col-xs-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+</div>
